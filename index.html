@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How Well Do You Know Us? ❤️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(#ffdee9, #b5fffc);
+      text-align: center;
+      padding: 30px;
+    }
+    .quiz-box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    h1 { color: #e91e63; }
+    .question {
+      margin-top: 20px;
+      text-align: left;
+    }
+    button {
+      background: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background: #d81b60;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h1>How well do you know us? 💕</h1>
+
+  <form id="quiz">
+
+    <div class="question">
+      <p>1. Where did we first talk properly?</p>
+      <input type="radio" name="q1" value="1"> Chat<br>
+      <input type="radio" name="q1" value="0"> Phone call<br>
+      <input type="radio" name="q1" value="0"> In person<br>
+    </div>
+
+    <div class="question">
+      <p>2. What is my favorite thing about you?</p>
+      <input type="radio" name="q2" value="0"> Your looks<br>
+      <input type="radio" name="q2" value="1"> Your care & effort<br>
+      <input type="radio" name="q2" value="0"> Your anger 😅<br>
+    </div>
+
+    <div class="question">
+      <p>3. What do we fight about the most?</p>
+      <input type="radio" name="q3" value="1"> Overthinking<br>
+      <input type="radio" name="q3" value="0"> Food<br>
+      <input type="radio" name="q3" value="0"> Movies<br>
+    </div>
+
+    <div class="question">
+      <p>4. What do I always want you to do more?</p>
+      <input type="radio" name="q4" value="1"> Take care of yourself<br>
+      <input type="radio" name="q4" value="0"> Buy me gifts<br>
+      <input type="radio" name="q4" value="0"> Wake up early<br>
+    </div>
+
+    <div class="question">
+      <p>5. What are we building together?</p>
+      <input type="radio" name="q5" value="0"> Memories<br>
+      <input type="radio" name="q5" value="0"> Love<br>
+      <input type="radio" name="q5" value="1"> A future ❤️<br>
+    </div>
+
+    <button type="button" onclick="checkScore()">Submit 💘</button>
+
+  </form>
+
+  <h2 id="result"></h2>
+</div>
+
+<script>
+  function checkScore() {
+    let score = 0;
+    for (let i = 1; i <= 5; i++) {
+      let q = document.querySelector('input[name="q' + i + '"]:checked');
+      if (q) score += parseInt(q.value);
+    }
+
+    document.getElementById("result").innerHTML =
+      "Your score: " + score + "/5 ❤️<br><br>" +
+      "<strong>No matter the score, you already won my heart.</strong>";
+  }
+</script>
+
+</body>
+</html>
