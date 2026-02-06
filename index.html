@@ -2,82 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Kingsle ❤️</title>
+<title>For Kingsle 💙</title>
 
 <style>
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:radial-gradient(circle at top,#2c003e,#000);
+  background:radial-gradient(circle at top,#1b0033,#000);
   color:#fff;
   text-align:center;
   overflow:hidden;
 }
 
-/* Moon */
+/* Soft moon */
 .moon{
   position:fixed;
   top:40px;
   right:60px;
   width:120px;
   height:120px;
-  background:#fff;
+  background:#f5f5f5;
   border-radius:50%;
-  box-shadow:0 0 40px #fff;
+  box-shadow:0 0 60px rgba(255,255,255,0.6);
 }
 
-/* Candle */
-.candle{
+/* Gentle glow from bottom */
+.moon-glow{
   position:fixed;
-  bottom:0;
+  bottom:-200px;
   left:50%;
   transform:translateX(-50%);
-}
-.flame{
-  width:20px;
-  height:40px;
-  background:orange;
-  border-radius:50%;
-  animation:flicker 0.3s infinite;
-}
-@keyframes flicker{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+  filter:blur(50px);
 }
 
-/* Boxes */
+/* Content box */
 .box{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(10px);
-  padding:25px;
-  border-radius:15px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  padding:28px;
+  border-radius:18px;
   max-width:520px;
-  margin:120px auto;
-  box-shadow:0 0 20px rgba(255,0,100,0.4);
+  margin:140px auto;
+  box-shadow:0 0 25px rgba(255,255,255,0.15);
 }
 
+/* Buttons */
 button{
   background:#e91e63;
   color:white;
   border:none;
-  padding:10px 20px;
-  border-radius:20px;
+  padding:10px 22px;
+  border-radius:22px;
   font-size:16px;
   cursor:pointer;
 }
 
-/* Hide sections */
+/* Inputs */
+input{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+/* Sections hidden initially */
 #quiz,#letter{display:none}
 
-/* Fireworks */
+/* Calm fireworks (slow & minimal) */
 .firework{
   position:fixed;
-  width:6px;
-  height:6px;
-  background:#ff4081;
+  width:5px;
+  height:5px;
+  background:#ff80ab;
   border-radius:50%;
-  animation:explode 1.5s ease-out forwards;
+  animation:explode 2.5s ease-out forwards;
 }
 @keyframes explode{
   0%{transform:scale(1);opacity:1;}
@@ -89,55 +90,52 @@ button{
 <body>
 
 <div class="moon"></div>
+<div class="moon-glow"></div>
 
-<div class="candle">
-  <div class="flame"></div>
-</div>
-
-<!-- MUSIC -->
+<!-- Soft background music -->
 <audio autoplay loop>
   <source src="love-music.mp3" type="audio/mpeg">
 </audio>
 
 <!-- PASSWORD PAGE -->
 <div class="box" id="lock">
-  <h2>🔐 Hi Kingsle</h2>
-  <p>Only you can unlock this 💖</p>
-  <input type="password" id="pwd">
+  <h2>🔐 Hey Kingsle</h2>
+  <p>This space is only for you 🤍</p>
+  <input type="password" id="pwd" placeholder="Enter password">
   <br><br>
-  <button onclick="unlock()">Unlock ❤️</button>
+  <button onclick="unlock()">Unlock</button>
 </div>
 
-<!-- QUIZ -->
+<!-- QUIZ PAGE -->
 <div class="box" id="quiz">
-<h2>How well do you know us, Kingsle? 💕</h2>
+<h2>How well do you know us? 💙</h2>
 
 <p>1. Which of these "firsts" was your favorite?</p>
-<input type="radio" name="q1" value="0"> A) First date<br>
-<input type="radio" name="q1" value="0"> B) First kiss<br>
-<input type="radio" name="q1" value="1"> C) First time we laughed together<br>
-<input type="radio" name="q1" value="0"> D) First time we said "I love you"<br>
+<input type="radio" name="q1"> A) First date<br>
+<input type="radio" name="q1"> B) First kiss<br>
+<input type="radio" name="q1"> C) First time we laughed together<br>
+<input type="radio" name="q1"> D) First time we said "I love you"<br>
 
 <p>2. What is our relationship’s "theme song" in your head?</p>
-<input type="radio" name="q2" value="0"> A) A romantic ballad<br>
-<input type="radio" name="q2" value="1"> B) A fun, upbeat pop song<br>
-<input type="radio" name="q2" value="0"> C) An old-school classic<br>
-<input type="radio" name="q2" value="0"> D) A cheesy love song<br>
+<input type="radio" name="q2"> A) A romantic ballad<br>
+<input type="radio" name="q2"> B) A fun, upbeat pop song<br>
+<input type="radio" name="q2"> C) An old-school classic<br>
+<input type="radio" name="q2"> D) A cheesy love song<br>
 
 <p>3. What is your favorite way for me to show affection?</p>
-<input type="radio" name="q3" value="0"> A) Holding hands in public<br>
-<input type="radio" name="q3" value="1"> B) Long, tight hugs<br>
-<input type="radio" name="q3" value="0"> C) Random forehead kisses<br>
-<input type="radio" name="q3" value="0"> D) Complimenting you out of nowhere<br>
+<input type="radio" name="q3"> A) Holding hands in public<br>
+<input type="radio" name="q3"> B) Long, tight hugs<br>
+<input type="radio" name="q3"> C) Random forehead kisses<br>
+<input type="radio" name="q3"> D) Complimenting me out of nowhere<br>
 
 <p>4. If we could jet off anywhere right now, where are we going?</p>
-<input type="radio" name="q4" value="0"> A) A cozy cabin in the mountains<br>
-<input type="radio" name="q4" value="0"> B) A sunny, crowded beach<br>
-<input type="radio" name="q4" value="1"> C) A busy, romantic city (Paris / Rome)<br>
-<input type="radio" name="q4" value="0"> D) A theme park<br>
+<input type="radio" name="q4"> A) Cozy cabin in the mountains<br>
+<input type="radio" name="q4"> B) Sunny beach<br>
+<input type="radio" name="q4"> C) Romantic city (Paris / Rome)<br>
+<input type="radio" name="q4"> D) Theme park<br>
 
 <br>
-<button onclick="submitQuiz()">Submit 💘</button>
+<button onclick="showLetter()">Continue</button>
 </div>
 
 <!-- LOVE LETTER -->
@@ -148,11 +146,11 @@ No matter the score,<br><br>
 <strong>you already won my heart ❤️</strong><br><br>
 
 Kingsle,<br><br>
-Thank you for being my calm in chaos,  
-my strength on hard days,  
+Thank you for being my calm in chaos,<br>
+my strength on hard days,<br>
 and my smile without trying.<br><br>
 
-This little website may fade when the screen closes,  
+This little website may fade when the screen closes,<br>
 but my love for you won’t. 🌙✨<br><br>
 
 Advance Valentine’s Day, my love 💖
@@ -165,31 +163,29 @@ function unlock(){
     document.getElementById("lock").style.display="none";
     document.getElementById("quiz").style.display="block";
   }else{
-    alert("Wrong password 😜 Try again");
+    alert("Not quite 💙 Try again");
   }
 }
 
-function submitQuiz(){
+function showLetter(){
   document.getElementById("quiz").style.display="none";
   document.getElementById("letter").style.display="block";
   fireworks();
 }
 
 function fireworks(){
-  for(let i=0;i<80;i++){
+  for(let i=0;i<30;i++){
     const f=document.createElement("div");
     f.className="firework";
     f.style.left="50vw";
     f.style.top="50vh";
-    f.style.setProperty("--x",(Math.random()*400-200)+"px");
-    f.style.setProperty("--y",(Math.random()*400-200)+"px");
+    f.style.setProperty("--x",(Math.random()*300-150)+"px");
+    f.style.setProperty("--y",(Math.random()*300-150)+"px");
     document.body.appendChild(f);
-    setTimeout(()=>f.remove(),1500);
+    setTimeout(()=>f.remove(),2500);
   }
 }
 </script>
 
 </body>
 </html>
-
-
